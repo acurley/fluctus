@@ -6,7 +6,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions
   # GET /institutions.json
   def index
-    @institutions = Institution.all
+    @institutions = Institution.find_with_conditions(name: '[*:*]')
   end
 
   # GET /institutions/1

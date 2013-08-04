@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   validates :email, :phone_number, presence: true
   validates :email, uniqueness: true
   validates :institution_name, presence: true
-  validates_inclusion_of :institution_name, in: -> (institution) {Institution.all.map(&:name)}
+  validate :institution_is_present
 
   # Custom format validations.  See app/validators
   validates :name, person_name_format: true
@@ -67,4 +67,11 @@ class User < ActiveRecord::Base
     end
     user
   end
+
+  private
+
+  def institution_is_present
+    errors.add(:base, "Institution Name is not present") unless !Institution.find_with_conditions(name: self.institution_name).empty?
+  end
+
 end
