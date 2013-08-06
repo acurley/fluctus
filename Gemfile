@@ -25,6 +25,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -44,6 +46,8 @@ end
 
 gem 'blacklight'
 gem 'hydra-head', '~> 6.3.0'
+# For importing sufia mixin's into our hydra models.
+gem 'sufia-models', '~> 3.0.0'
 
 gem "devise", github: "plataformatec/devise", branch: "rails4"
 gem "bootstrap-sass"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130726183621) do
+ActiveRecord::Schema.define(version: 20130806201826) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id",     null: false
@@ -64,5 +64,14 @@ ActiveRecord::Schema.define(version: 20130726183621) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "version_committers", force: true do |t|
+    t.string   "obj_id"
+    t.string   "datastream_id"
+    t.string   "version_id"
+    t.string   "committer_login"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

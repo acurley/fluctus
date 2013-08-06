@@ -8,6 +8,8 @@ class DescriptionObject < ActiveFedora::Base
 
   belongs_to :institution, property: :is_part_of
 
+  has_many :generic_files, property: :is_part_of
+
   delegate :title, to: 'descMetadata', unique: true
   delegate :dpn_status, to: 'descMetadata', unique: true
 

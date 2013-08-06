@@ -3,6 +3,7 @@ $logo_image: 'aptrust/aptrust_nodes_icon.png';
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 
+@import "blacklight/blacklight";
 /* universal */
 
 html {
@@ -25,7 +26,7 @@ textarea {
 }
 
 /* HEADER */
-#header-navbar-fixed-top {
+#page-header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   min-width: 395px;
   /* This ensures that any tool pop-up goes infront of the header */
@@ -87,3 +88,4 @@ footer {
   margin-top: 45px;
   @include box_sizing;
 }
+
